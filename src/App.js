@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import UserForm from './components/UserForm';
+import UserDisplay from './components/UserDisplay';
+import { UserProvider } from './components/UserContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    return (
+        <UserProvider>
+            <div className='flex items-start pt-12 w-screen h-screen justify-center gap-16'>
+                <UserForm />
+                <UserDisplay />
+            </div>
+        </UserProvider>
+    );
+};
 
 export default App;
